@@ -1,0 +1,80 @@
+/* Navigation */
+.navbar {
+  padding: var(--space-sm) 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.nav-links a:hover { color: var(--clr-secondary); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--clr-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent {
+  background-color: var(--clr-accent);
+  color: var(--clr-primary);
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  background-color: #E0A600;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Cards */
+.card {
+  background: var(--clr-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}

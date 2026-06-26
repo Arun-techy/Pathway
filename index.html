@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pathway | AI Career Intelligence</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <a href="index.html" class="logo">
+        <i data-lucide="compass"></i> Pathway
+      </a>
+      <ul class="nav-links flex items-center">
+        <li><a href="dashboard.html">Platform</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="dashboard.html" class="btn btn-primary">Enter Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero container">
+    <div class="hero-content fade-in-up">
+      <div class="badge">AI-Powered Career Guidance</div>
+      <h1>Navigate your career with <span class="text-gradient">precision</span>.</h1>
+      <p>Stop guessing your next move. Our intelligence engine analyzes your skills, maps the industry gaps, and generates a personalized roadmap to architect your future.</p>
+      <div class="hero-actions">
+        <a href="dashboard.html" class="btn btn-accent">Start Your Analysis <i data-lucide="arrow-right"></i></a>
+        <a href="#features" class="btn btn-outline">Explore Capabilities</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in-up" style="animation-delay: 0.2s;">
+      <div class="abstract-dashboard">
+        <div class="abs-card"></div>
+        <div class="abs-card"></div>
+        <div class="abs-card wide"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features-section container">
+    <div class="section-header text-center fade-in-up">
+      <h2>Enterprise-grade insights for your career</h2>
+      <p>Comprehensive tools designed to build your profile, identify weaknesses, and accelerate growth.</p>
+    </div>
+    
+    <div class="feature-grid">
+      <div class="card feature-card">
+        <div class="icon-wrapper"><i data-lucide="brain-circuit"></i></div>
+        <h3>AI Recommendation</h3>
+        <p>Advanced algorithmic matching connecting your innate strengths to high-growth industry roles.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon-wrapper"><i data-lucide="target"></i></div>
+        <h3>Skill Gap Analysis</h3>
+        <p>Real-time market data comparison to identify exactly what you need to learn to get hired.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon-wrapper"><i data-lucide="map"></i></div>
+        <h3>Dynamic Roadmaps</h3>
+        <p>Month-by-month actionable execution plans tailored to your specific career objective.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="icon-wrapper"><i data-lucide="file-check"></i></div>
+        <h3>ATS Resume Parsing</h3>
+        <p>Deep-scan keyword analysis to ensure your profile bypasses corporate applicant tracking systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="js/landing.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

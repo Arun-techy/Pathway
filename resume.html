@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Analyzer | Pathway</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/skills.css"> <link rel="stylesheet" href="css/resume.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo"><i data-lucide="compass"></i> Pathway</a>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+      <li><a href="recommendation.html"><i data-lucide="brain-circuit"></i> AI Recommendation</a></li>
+      <li><a href="skills.html"><i data-lucide="target"></i> Skill Gap</a></li>
+      <li><a href="roadmap.html"><i data-lucide="map"></i> Roadmap</a></li>
+      <li><a href="resume.html" class="active"><i data-lucide="file-check"></i> Resume ATS</a></li>
+      <li><a href="career-path.html"><i data-lucide="trending-up"></i> Career Path</a></li>
+    </ul>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header mb-md">
+      <h2>Resume ATS Intelligence</h2>
+      <p>Upload your resume to evaluate its performance against corporate applicant tracking systems.</p>
+    </header>
+
+    <div id="upload-state" class="upload-container fade-in-up">
+      <div class="target-role-selector mb-md">
+        <label class="text-sm font-bold text-primary mb-xs block">Target Role for Analysis:</label>
+        <select class="role-select">
+          <option>Frontend Engineer</option>
+          <option>Full Stack Developer</option>
+          <option>UI/UX Designer</option>
+        </select>
+      </div>
+
+      <div id="drop-zone" class="drop-zone card text-center">
+        <input type="file" id="file-input" hidden accept=".pdf,.doc,.docx" />
+        <div class="drop-icon-wrapper">
+          <i data-lucide="cloud-upload" class="drop-icon"></i>
+        </div>
+        <h3>Upload your Resume</h3>
+        <p class="text-muted text-sm mb-md">Drag & drop your PDF or Word document here, or click to browse.</p>
+        <button class="btn btn-primary" id="browse-btn">Browse Files</button>
+        <p class="text-xs text-muted mt-sm">Maximum file size: 5MB</p>
+      </div>
+    </div>
+
+    <div id="scanning-state" class="scanning-container hidden">
+      <div class="scanner-ui">
+        <i data-lucide="scan-line" class="scanning-icon text-secondary"></i>
+        <h3 class="mt-sm">Parsing Document...</h3>
+        <p id="scan-text" class="text-muted text-sm mt-xs">Extracting semantic text blocks.</p>
+        <div class="progress-bar-bg mt-md w-100">
+          <div id="scan-progress" class="progress-bar-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="results-state" class="results-container hidden">
+      <div class="flex justify-between items-center mb-md">
+        <div class="flex items-center gap-sm">
+          <i data-lucide="file-text" class="text-primary"></i>
+          <h3>john_doe_resume_v3.pdf</h3>
+        </div>
+        <button class="btn btn-outline btn-sm" id="reupload-btn"><i data-lucide="refresh-cw"></i> Scan New Resume</button>
+      </div>
+
+      <div class="analysis-grid">
+        
+        <div class="card score-card text-center fade-in-up">
+          <h3 class="mb-sm">ATS Match Score</h3>
+          <p class="text-sm text-muted mb-md">Compared against "Frontend Engineer" requirements.</p>
+          
+          <div class="ats-circular-progress" data-progress="82">
+            <div class="ats-inner-circle">
+              <span class="ats-progress-value">0</span>
+              <span class="text-sm text-muted">/100</span>
+            </div>
+          </div>
+          
+          <div class="score-status mt-md positive">
+            <strong>Excellent Fit</strong>
+            <p class="text-sm mt-xs">Your resume is highly optimized, but missing a few key phrases.</p>
+          </div>
+        </div>
+
+        <div class="metrics-grid fade-in-up" style="animation-delay: 0.1s;">
+          <div class="card metric-card">
+            <div class="flex justify-between mb-xs">
+              <span class="text-sm font-bold">Keyword Match</span>
+              <span class="text-primary font-bold">85%</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+          </div>
+          <div class="card metric-card">
+            <div class="flex justify-between mb-xs">
+              <span class="text-sm font-bold">Action Verbs</span>
+              <span class="text-accent font-bold">60%</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill bg-accent" style="width: 60%;"></div></div>
+          </div>
+          <div class="card metric-card">
+            <div class="flex justify-between mb-xs">
+              <span class="text-sm font-bold">Brevity & Formatting</span>
+              <span class="text-success font-bold">95%</span>
+            </div>
+            <div class="progress-bar-bg"><div class="progress-bar-fill bg-success" style="width: 95%;"></div></div>
+          </div>
+        </div>
+
+        <div class="feedback-columns grid-2 fade-in-up" style="animation-delay: 0.2s;">
+          
+          <div class="card">
+            <div class="flex items-center gap-sm mb-sm">
+              <div class="icon-box success"><i data-lucide="thumbs-up"></i></div>
+              <h3>Strengths</h3>
+            </div>
+            <ul class="feedback-list">
+              <li><i data-lucide="check-circle-2" class="text-success"></i> <strong>Quantified Impact:</strong> You effectively used numbers to describe your achievements (e.g., "Increased load speed by 40%").</li>
+              <li><i data-lucide="check-circle-2" class="text-success"></i> <strong>Clean Formatting:</strong> No complex tables or columns detected. Highly machine-readable.</li>
+              <li><i data-lucide="check-circle-2" class="text-success"></i> <strong>Core Skills Present:</strong> HTML, CSS, JavaScript, and React are prominently featured.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="flex items-center gap-sm mb-sm">
+              <div class="icon-box warning"><i data-lucide="alert-circle"></i></div>
+              <h3>Areas to Improve</h3>
+            </div>
+            <ul class="feedback-list">
+              <li><i data-lucide="arrow-right" class="text-accent"></i> <strong>Missing Keywords:</strong> Add <em>"TypeScript"</em>, <em>"Redux"</em>, and <em>"Jest"</em> to your skills section.</li>
+              <li><i data-lucide="arrow-right" class="text-accent"></i> <strong>Weak Action Verbs:</strong> Replace passive words like "Helped with" and "Worked on" with "Architected", "Engineered", or "Spearheaded".</li>
+              <li><i data-lucide="arrow-right" class="text-accent"></i> <strong>Contact Info:</strong> Your LinkedIn URL is missing or not hyperlinked properly.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/resume.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

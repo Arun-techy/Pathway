@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Roadmap | Pathway</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/roadmap.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo"><i data-lucide="compass"></i> Pathway</a>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+      <li><a href="recommendation.html"><i data-lucide="brain-circuit"></i> AI Recommendation</a></li>
+      <li><a href="skills.html"><i data-lucide="target"></i> Skill Gap</a></li>
+      <li><a href="roadmap.html" class="active"><i data-lucide="map"></i> Roadmap</a></li>
+      <li><a href="resume.html"><i data-lucide="file-check"></i> Resume ATS</a></li>
+      <li><a href="career-path.html"><i data-lucide="trending-up"></i> Career Path</a></li>
+    </ul>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header flex justify-between items-center mb-lg">
+      <div class="header-text fade-in-up">
+        <h2>Your 6-Month Execution Plan</h2>
+        <p>Target Role: <strong class="text-primary">Frontend Engineer</strong></p>
+      </div>
+      <div class="header-actions fade-in-up">
+        <button class="btn btn-outline"><i data-lucide="calendar"></i> Sync Calendar</button>
+      </div>
+    </header>
+
+    <div class="card progress-overview mb-lg fade-in-up" style="animation-delay: 0.1s;">
+      <div class="flex justify-between items-center mb-sm">
+        <h3 class="text-md">Roadmap Completion</h3>
+        <span class="progress-percentage font-bold text-primary">32%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width: 32%;"></div>
+      </div>
+      <p class="text-sm text-muted mt-sm">You are currently on track. Complete 2 more tasks to finish Month 2.</p>
+    </div>
+
+    <div class="timeline-container fade-in-up" style="animation-delay: 0.2s;">
+      
+      <div class="timeline-item status-completed">
+        <div class="timeline-marker">
+          <i data-lucide="check"></i>
+        </div>
+        <div class="timeline-content card hover-lift">
+          <div class="phase-header flex justify-between items-start mb-sm">
+            <div>
+              <span class="badge badge-success mb-xs">Month 1</span>
+              <h3>Core Fundamentals</h3>
+            </div>
+            <span class="time-estimate text-sm text-muted"><i data-lucide="clock"></i> 40 Hours</span>
+          </div>
+          <p class="text-sm mb-md">Mastering the structural and visual building blocks of the web.</p>
+          
+          <ul class="task-list">
+            <li class="task-item completed">
+              <i data-lucide="check-circle-2" class="task-icon"></i>
+              <span>Semantic HTML5 & Accessibility (A11y)</span>
+            </li>
+            <li class="task-item completed">
+              <i data-lucide="check-circle-2" class="task-icon"></i>
+              <span>Advanced CSS (Flexbox, Grid, Custom Properties)</span>
+            </li>
+            <li class="task-item completed">
+              <i data-lucide="check-circle-2" class="task-icon"></i>
+              <span>Responsive Web Design & Media Queries</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item status-active">
+        <div class="timeline-marker">
+          <div class="pulse-ring"></div>
+          <div class="inner-dot"></div>
+        </div>
+        <div class="timeline-content card active-card hover-lift">
+          <div class="phase-header flex justify-between items-start mb-sm">
+            <div>
+              <span class="badge badge-primary mb-xs">Month 2 (Current)</span>
+              <h3>JavaScript Deep Dive</h3>
+            </div>
+            <span class="time-estimate text-sm text-muted"><i data-lucide="clock"></i> 60 Hours</span>
+          </div>
+          <p class="text-sm mb-md">Understanding the DOM, asynchronous programming, and ES6+ features.</p>
+          
+          <ul class="task-list interactive">
+            <li class="task-item completed">
+              <label class="custom-checkbox">
+                <input type="checkbox" checked disabled>
+                <span class="checkmark"></span>
+              </label>
+              <span>DOM Manipulation & Event Listeners</span>
+            </li>
+            <li class="task-item active">
+              <label class="custom-checkbox">
+                <input type="checkbox" class="task-toggle">
+                <span class="checkmark"></span>
+              </label>
+              <span>Promises, Async/Await, and Fetch API <span class="tag-urgent">In Progress</span></span>
+            </li>
+            <li class="task-item">
+              <label class="custom-checkbox">
+                <input type="checkbox" class="task-toggle">
+                <span class="checkmark"></span>
+              </label>
+              <span>ES6+ Concepts (Destructuring, Closures, Hoisting)</span>
+            </li>
+          </ul>
+          
+          <div class="resource-box mt-md">
+            <div class="flex items-center gap-sm mb-xs">
+              <i data-lucide="book-open" class="text-primary"></i>
+              <strong class="text-sm">Recommended Resource</strong>
+            </div>
+            <a href="#" class="resource-link text-sm">Namaste JavaScript by Akshay Saini <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item status-locked">
+        <div class="timeline-marker">
+          <i data-lucide="lock"></i>
+        </div>
+        <div class="timeline-content card">
+          <div class="phase-header flex justify-between items-start mb-sm">
+            <div>
+              <span class="badge badge-neutral mb-xs">Month 3</span>
+              <h3>Framework Integration (React.js)</h3>
+            </div>
+            <span class="time-estimate text-sm text-muted"><i data-lucide="clock"></i> 80 Hours</span>
+          </div>
+          <p class="text-sm text-muted">Complete Month 2 to unlock these modules.</p>
+          
+          <ul class="task-list blurred">
+            <li class="task-item">
+              <i data-lucide="circle" class="task-icon text-muted"></i>
+              <span>React Fundamentals & JSX</span>
+            </li>
+            <li class="task-item">
+              <i data-lucide="circle" class="task-icon text-muted"></i>
+              <span>State Management & React Hooks</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item status-goal">
+        <div class="timeline-marker large">
+          <i data-lucide="award"></i>
+        </div>
+        <div class="timeline-content goal-card text-center">
+          <h3>Frontend Engineer Readiness</h3>
+          <p class="text-sm mt-xs mb-sm">Profile optimized for Top Tier Product Companies.</p>
+          <button class="btn btn-primary btn-sm" disabled>Unlock Mock Interview</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/roadmap.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

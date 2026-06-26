@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Recommendation | Pathway</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css"> <link rel="stylesheet" href="css/recommendation.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo"><i data-lucide="compass"></i> Pathway</a>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+      <li><a href="recommendation.html" class="active"><i data-lucide="brain-circuit"></i> AI Recommendation</a></li>
+      <li><a href="skills.html"><i data-lucide="target"></i> Skill Gap</a></li>
+      <li><a href="roadmap.html"><i data-lucide="map"></i> Roadmap</a></li>
+      <li><a href="resume.html"><i data-lucide="file-check"></i> Resume ATS</a></li>
+      <li><a href="career-path.html"><i data-lucide="trending-up"></i> Career Path</a></li>
+    </ul>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header">
+      <h2>AI Career Intelligence Engine</h2>
+      <p>Configure your profile to generate data-driven career pathways.</p>
+    </header>
+
+    <div id="assessment-wizard" class="card wizard-container fade-in-up">
+      
+      <div class="wizard-progress">
+        <div class="step active" data-step="1">1. Academics</div>
+        <div class="step" data-step="2">2. Profile</div>
+        <div class="step" data-step="3">3. Preferences</div>
+      </div>
+
+      <form id="ai-form">
+        <div class="form-step active" id="step-1">
+          <div class="form-grid">
+            <div class="input-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="John Doe" required>
+            </div>
+            <div class="input-group">
+              <label>Education Level</label>
+              <select required>
+                <option value="" disabled selected>Select level...</option>
+                <option>Undergraduate</option>
+                <option>Postgraduate</option>
+                <option>Self-Taught / Bootcamp</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Degree / Major</label>
+              <input type="text" placeholder="e.g. Computer Science" required>
+            </div>
+            <div class="input-group">
+              <label>Current CGPA / Percentage</label>
+              <input type="text" placeholder="e.g. 8.5" required>
+            </div>
+          </div>
+          <div class="form-actions right">
+            <button type="button" class="btn btn-primary next-btn">Continue <i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="form-step" id="step-2">
+          <div class="form-grid">
+            <div class="input-group full-width">
+              <label>Technical & Soft Skills (Comma separated)</label>
+              <input type="text" placeholder="e.g. JavaScript, Python, Leadership, Figma" required>
+            </div>
+            <div class="input-group full-width">
+              <label>Core Interests</label>
+              <input type="text" placeholder="e.g. UI Design, Data Analysis, Cloud Architecture">
+            </div>
+            <div class="input-group">
+              <label>Greatest Strengths</label>
+              <input type="text" placeholder="e.g. Problem solving, Adaptability">
+            </div>
+            <div class="input-group">
+              <label>Areas for Improvement (Weaknesses)</label>
+              <input type="text" placeholder="e.g. Public speaking, Backend optimization">
+            </div>
+          </div>
+          <div class="form-actions space-between">
+            <button type="button" class="btn btn-outline prev-btn"><i data-lucide="arrow-left"></i> Back</button>
+            <button type="button" class="btn btn-primary next-btn">Continue <i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="form-step" id="step-3">
+          <div class="form-grid">
+            <div class="input-group">
+              <label>Preferred Industry</label>
+              <select required>
+                <option value="" disabled selected>Select industry...</option>
+                <option>Fintech</option>
+                <option>EdTech</option>
+                <option>SaaS / Enterprise</option>
+                <option>HealthTech</option>
+                <option>E-Commerce</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Preferred Work Style</label>
+              <select required>
+                <option value="" disabled selected>Select style...</option>
+                <option>Remote</option>
+                <option>Hybrid</option>
+                <option>On-Site</option>
+              </select>
+            </div>
+            <div class="input-group full-width">
+              <label>Preferred Location</label>
+              <input type="text" placeholder="e.g. Bangalore, London, Remote globally">
+            </div>
+          </div>
+          <div class="form-actions space-between">
+            <button type="button" class="btn btn-outline prev-btn"><i data-lucide="arrow-left"></i> Back</button>
+            <button type="submit" class="btn btn-accent"><i data-lucide="sparkles"></i> Generate Analysis</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="loading-state" class="loading-container hidden">
+      <div class="spinner"></div>
+      <h3>Analyzing your profile...</h3>
+      <p class="loading-text">Cross-referencing skills with current market demands.</p>
+    </div>
+
+    <div id="results-state" class="results-container hidden">
+      <div class="results-header flex justify-between items-center mb-md">
+        <div>
+          <h3>Your Optimal Career Pathways</h3>
+          <p>Based on a 98% confidence algorithmic match.</p>
+        </div>
+        <button class="btn btn-outline" id="retake-btn"><i data-lucide="rotate-ccw"></i> Recalibrate</button>
+      </div>
+
+      <div class="recommendation-grid">
+        <div class="card result-card top-match">
+          <div class="match-badge">94% Match</div>
+          <div class="role-header">
+            <div class="role-icon"><i data-lucide="layout"></i></div>
+            <div>
+              <h4>Frontend Engineer</h4>
+              <span class="industry-tag">SaaS / Enterprise</span>
+            </div>
+          </div>
+          <p class="role-desc">Excellent alignment with your JavaScript skills and interest in UI Design. Your remote work preference perfectly matches current industry trends for this role.</p>
+          <div class="role-meta">
+            <div class="meta-item"><i data-lucide="briefcase"></i> High Demand</div>
+            <div class="meta-item"><i data-lucide="trending-up"></i> Fast Growth</div>
+          </div>
+          <div class="card-actions mt-md">
+            <a href="skills.html" class="btn btn-primary btn-sm full-width">Analyze Skill Gap</a>
+          </div>
+        </div>
+
+        <div class="card result-card">
+          <div class="match-badge secondary">82% Match</div>
+          <div class="role-header">
+            <div class="role-icon"><i data-lucide="smartphone"></i></div>
+            <div>
+              <h4>Mobile App Developer</h4>
+              <span class="industry-tag">E-Commerce</span>
+            </div>
+          </div>
+          <p class="role-desc">Strong foundation, but requires bridging the gap into React Native or Flutter. High alignment with your problem-solving strengths.</p>
+          <div class="card-actions mt-md">
+            <a href="skills.html" class="btn btn-outline btn-sm full-width">Analyze Skill Gap</a>
+          </div>
+        </div>
+
+        <div class="card result-card">
+          <div class="match-badge secondary">76% Match</div>
+          <div class="role-header">
+            <div class="role-icon"><i data-lucide="pen-tool"></i></div>
+            <div>
+              <h4>UX/UI Designer</h4>
+              <span class="industry-tag">Fintech</span>
+            </div>
+          </div>
+          <p class="role-desc">Capitalizes on your Figma skills and design interests, though may require a shift away from core coding paradigms.</p>
+          <div class="card-actions mt-md">
+            <a href="skills.html" class="btn btn-outline btn-sm full-width">Analyze Skill Gap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/recommendation.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

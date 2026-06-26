@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture & Pitch | Pathway</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/about.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container flex justify-between items-center">
+      <a href="index.html" class="logo">
+        <i data-lucide="compass"></i> Pathway
+      </a>
+      <ul class="nav-links flex items-center">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Architecture Pitch</a></li>
+        <li><a href="dashboard.html" class="btn btn-primary">Enter Platform</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="pitch-hero container mt-xl">
+    <div class="badge badge-sih mb-md fade-in-up">Smart India Hackathon 2024 Submission</div>
+    <h1 class="fade-in-up" style="animation-delay: 0.1s;">Bridging the gap between <br><span class="text-gradient">academic curriculum and industry demands.</span></h1>
+    <p class="fade-in-up" style="animation-delay: 0.2s;">Pathway is an AI-native career intelligence engine that leverages LLMs and vector similarity search to generate hyper-personalized learning roadmaps.</p>
+  </header>
+
+  <section class="container mt-xl">
+    <div class="grid-2 gap-lg">
+      <div class="card problem-card scroll-reveal">
+        <div class="icon-box danger mb-md"><i data-lucide="x-octagon"></i></div>
+        <h3>The Problem</h3>
+        <ul class="pitch-list">
+          <li><strong>Generic Advice:</strong> Students rely on outdated, one-size-fits-all career roadmaps.</li>
+          <li><strong>The Skill Gap:</strong> Academia moves slower than industry. Students graduate without knowing current market tech stacks.</li>
+          <li><strong>ATS Rejection:</strong> 75% of student resumes are rejected by Applicant Tracking Systems before a human ever sees them.</li>
+        </ul>
+      </div>
+
+      <div class="card solution-card scroll-reveal" style="transition-delay: 0.1s;">
+        <div class="icon-box success mb-md"><i data-lucide="check-circle"></i></div>
+        <h3>The Pathway Solution</h3>
+        <ul class="pitch-list">
+          <li><strong>Algorithmic Matching:</strong> Using Cosine Similarity to match student skills against live job descriptions.</li>
+          <li><strong>Dynamic Roadmaps:</strong> Auto-generating month-by-month execution plans using LLMs.</li>
+          <li><strong>Pre-Screening Simulator:</strong> A localized ATS parser that grades resumes exactly like enterprise HR software.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark mt-xl">
+    <div class="container py-xl">
+      <div class="text-center mb-lg scroll-reveal">
+        <h2 class="text-white">System Architecture</h2>
+        <p class="text-light">How the Intelligence Engine works under the hood.</p>
+      </div>
+
+      <div class="architecture-diagram scroll-reveal">
+        <div class="arch-node">
+          <i data-lucide="monitor-smartphone"></i>
+          <h4>Client (Vanilla JS)</h4>
+          <p>Collects multi-step JSON payload</p>
+        </div>
+
+        <div class="arch-connector"><i data-lucide="arrow-right"></i></div>
+
+        <div class="arch-node highlight">
+          <i data-lucide="server"></i>
+          <h4>Spring Boot / Java</h4>
+          <p>REST API & Orchestration</p>
+        </div>
+
+        <div class="arch-connector split">
+          <i data-lucide="git-merge" class="rotate-90"></i>
+        </div>
+
+        <div class="arch-layer">
+          <div class="arch-node alt">
+            <i data-lucide="brain-circuit"></i>
+            <h4>LLM (Gemini/OpenAI)</h4>
+            <p>Prompt Eng. + RAG</p>
+          </div>
+          <div class="arch-node alt">
+            <i data-lucide="database"></i>
+            <h4>pgvector (PostgreSQL)</h4>
+            <p>Cosine Similarity Matching</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mt-xl mb-xl">
+    <div class="text-center mb-lg scroll-reveal">
+      <h2>The Technology Stack</h2>
+      <p>Built for scale, speed, and enterprise readiness.</p>
+    </div>
+
+    <div class="stack-grid scroll-reveal">
+      <div class="stack-item">
+        <i data-lucide="layout" class="stack-icon"></i>
+        <h4>Frontend</h4>
+        <p>HTML5, CSS3 Variables, Vanilla JS, Chart.js</p>
+      </div>
+      <div class="stack-item">
+        <i data-lucide="terminal" class="stack-icon"></i>
+        <h4>Backend</h4>
+        <p>Java, Spring Boot, Spring Security</p>
+      </div>
+      <div class="stack-item">
+        <i data-lucide="cpu" class="stack-icon"></i>
+        <h4>AI / ML</h4>
+        <p>LangChain4j, Gemini API, Text Embeddings</p>
+      </div>
+      <div class="stack-item">
+        <i data-lucide="cloud" class="stack-icon"></i>
+        <h4>Infrastructure</h4>
+        <p>Docker, AWS EC2, PostgreSQL</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="js/about.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

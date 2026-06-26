@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Pathway</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo">
+        <i data-lucide="compass"></i> Pathway
+      </a>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="active"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+      <li><a href="recommendation.html"><i data-lucide="brain-circuit"></i> AI Recommendation</a></li>
+      <li><a href="skills.html"><i data-lucide="target"></i> Skill Gap</a></li>
+      <li><a href="roadmap.html"><i data-lucide="map"></i> Roadmap</a></li>
+      <li><a href="resume.html"><i data-lucide="file-check"></i> Resume ATS</a></li>
+      <li><a href="career-path.html"><i data-lucide="trending-up"></i> Career Path</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="#" class="user-profile">
+        <div class="avatar">JS</div>
+        <div class="user-info">
+          <span class="user-name">John Student</span>
+          <span class="user-role">CS Undergrad</span>
+        </div>
+      </a>
+    </div>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header flex justify-between items-center">
+      <h2>Overview</h2>
+      <div class="header-actions flex items-center">
+        <button class="icon-btn"><i data-lucide="bell"></i></button>
+        <button class="btn btn-primary">Update Profile</button>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      
+      <div class="card welcome-card fade-in-up">
+        <div class="welcome-content">
+          <h3>Welcome back, John.</h3>
+          <p>Your profile is 85% complete. Run a new ATS scan to see how your recent project impacts your hireability.</p>
+          <div class="quick-actions mt-sm">
+            <a href="recommendation.html" class="btn btn-primary btn-sm">Run AI Analysis</a>
+            <a href="resume.html" class="btn btn-outline btn-sm">Upload Resume</a>
+          </div>
+        </div>
+        <div class="welcome-illustration">
+           <i data-lucide="rocket" class="large-icon"></i>
+        </div>
+      </div>
+
+      <div class="stats-container grid-3 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="card stat-card">
+          <div class="stat-header">
+            <span>ATS Score</span>
+            <i data-lucide="file-text"></i>
+          </div>
+          <div class="stat-value text-gradient">78/100</div>
+          <div class="stat-trend positive"><i data-lucide="arrow-up-right"></i> +5% from last week</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-header">
+            <span>Market Match</span>
+            <i data-lucide="briefcase"></i>
+          </div>
+          <div class="stat-value text-gradient">Frontend</div>
+          <div class="stat-trend neutral"><i data-lucide="minus"></i> Solid alignment</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-header">
+            <span>Skills Mastered</span>
+            <i data-lucide="award"></i>
+          </div>
+          <div class="stat-value text-gradient">12</div>
+          <div class="stat-trend positive"><i data-lucide="arrow-up-right"></i> 3 pending in roadmap</div>
+        </div>
+      </div>
+
+      <div class="card chart-card fade-in-up" style="animation-delay: 0.2s;">
+        <div class="card-header flex justify-between items-center">
+          <h3>Career Growth Projection</h3>
+          <select class="select-minimal">
+            <option>Next 12 Months</option>
+            <option>Next 3 Years</option>
+          </select>
+        </div>
+        <div class="chart-container">
+          <canvas id="growthChart"></canvas>
+        </div>
+      </div>
+
+      <div class="feature-widgets grid-2 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="card widget-card hover-lift">
+          <div class="widget-icon"><i data-lucide="map"></i></div>
+          <h4>Current Roadmap</h4>
+          <p>You are currently on Month 2 of your React.js Developer roadmap.</p>
+          <div class="progress-bar-bg mt-sm">
+            <div class="progress-bar-fill" style="width: 45%;"></div>
+          </div>
+          <a href="roadmap.html" class="widget-link">View timeline <i data-lucide="arrow-right"></i></a>
+        </div>
+        
+        <div class="card widget-card hover-lift">
+          <div class="widget-icon"><i data-lucide="activity"></i></div>
+          <h4>Recent Activity</h4>
+          <ul class="activity-list">
+            <li><i data-lucide="check-circle-2"></i> Completed: "Advanced CSS Flexbox"</li>
+            <li><i data-lucide="upload-cloud"></i> Uploaded Resume v2.pdf</li>
+            <li><i data-lucide="search"></i> Analyzed "Full Stack Developer" role</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

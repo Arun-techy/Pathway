@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Path | Pathway</title>
+  
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/career-path.css">
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo"><i data-lucide="compass"></i> Pathway</a>
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+      <li><a href="recommendation.html"><i data-lucide="brain-circuit"></i> AI Recommendation</a></li>
+      <li><a href="skills.html"><i data-lucide="target"></i> Skill Gap</a></li>
+      <li><a href="roadmap.html"><i data-lucide="map"></i> Roadmap</a></li>
+      <li><a href="resume.html"><i data-lucide="file-check"></i> Resume ATS</a></li>
+      <li><a href="career-path.html" class="active"><i data-lucide="trending-up"></i> Career Path</a></li>
+    </ul>
+  </aside>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header mb-lg">
+      <h2>Long-Term Trajectory</h2>
+      <p>Your projected 10-year growth mapped for a <strong class="text-primary">Frontend Engineering</strong> track.</p>
+    </header>
+
+    <div class="path-layout fade-in-up">
+      
+      <div class="timeline-wrapper card">
+        <h3 class="mb-md">The Blueprint</h3>
+        
+        <div class="svg-timeline-container">
+          <svg class="timeline-line-svg" preserveAspectRatio="none" viewBox="0 0 40 600">
+            <line x1="20" y1="20" x2="20" y2="580" class="line-bg" />
+            <line x1="20" y1="20" x2="20" y2="580" class="line-progress" id="progress-line" />
+          </svg>
+
+          <div class="timeline-nodes">
+            
+            <button class="node-btn active" data-stage="student">
+              <div class="node-circle"><i data-lucide="book-open"></i></div>
+              <div class="node-label">
+                <h4>CS Student</h4>
+                <span>Years 0-4</span>
+              </div>
+            </button>
+
+            <button class="node-btn" data-stage="intern">
+              <div class="node-circle"><i data-lucide="coffee"></i></div>
+              <div class="node-label">
+                <h4>SDE Intern</h4>
+                <span>Year 4</span>
+              </div>
+            </button>
+
+            <button class="node-btn" data-stage="junior">
+              <div class="node-circle"><i data-lucide="code"></i></div>
+              <div class="node-label">
+                <h4>Junior Engineer</h4>
+                <span>Years 1-3</span>
+              </div>
+            </button>
+
+            <button class="node-btn" data-stage="mid">
+              <div class="node-circle"><i data-lucide="layers"></i></div>
+              <div class="node-label">
+                <h4>Mid-Level Engineer</h4>
+                <span>Years 3-6</span>
+              </div>
+            </button>
+
+            <button class="node-btn" data-stage="senior">
+              <div class="node-circle"><i data-lucide="zap"></i></div>
+              <div class="node-label">
+                <h4>Senior Engineer</h4>
+                <span>Years 6-9</span>
+              </div>
+            </button>
+
+            <button class="node-btn" data-stage="architect">
+              <div class="node-circle"><i data-lucide="hexagon"></i></div>
+              <div class="node-label">
+                <h4>System Architect</h4>
+                <span>Year 10+</span>
+              </div>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="details-panel" id="details-panel">
+        <h3 class="mb-md">Stage Details</h3>
+        <p id="stage-description">Select a stage to view its details.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/career-path.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

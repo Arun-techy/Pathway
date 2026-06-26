@@ -1,0 +1,172 @@
+/* Layout & Utilities */
+.mt-xl { margin-top: 6rem; }
+.mb-xl { margin-bottom: 6rem; }
+.py-xl { padding-top: 6rem; padding-bottom: 6rem; }
+.gap-lg { gap: 3rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; }
+.text-center { text-align: center; }
+
+/* Navbar override for public page */
+.navbar .active { color: var(--clr-primary); font-weight: 600; border-bottom: 2px solid var(--clr-primary); padding-bottom: 2px; }
+
+/* Pitch Hero */
+.pitch-hero {
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pitch-hero h1 {
+  font-size: 4rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.pitch-hero p {
+  font-size: 1.25rem;
+  color: var(--clr-text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.badge-sih {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Problem vs Solution */
+.pitch-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pitch-list li {
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+}
+
+.pitch-list li strong {
+  color: var(--clr-text-main);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.problem-card { border-top: 4px solid #DC2626; }
+.solution-card { border-top: 4px solid #059669; }
+
+.icon-box { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.icon-box.danger { background: rgba(220, 38, 38, 0.1); color: #DC2626; }
+.icon-box.success { background: rgba(5, 150, 105, 0.1); color: #059669; }
+
+/* System Architecture Section */
+.bg-dark {
+  background-color: var(--clr-primary);
+  color: white;
+}
+
+.text-white { color: white !important; }
+.text-light { color: rgba(255, 255, 255, 0.7); font-size: 1.125rem; }
+
+.architecture-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.arch-node {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  width: 240px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.arch-node:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+
+.arch-node.highlight {
+  border-color: var(--clr-accent);
+  background: rgba(244, 180, 0, 0.1);
+}
+
+.arch-node.alt { background: rgba(31, 60, 136, 0.5); }
+
+.arch-node i {
+  width: 32px;
+  height: 32px;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+.arch-node h4 { color: white; margin-bottom: 0.5rem; font-size: 1.125rem; }
+.arch-node p { color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; }
+
+.arch-connector { color: rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; width: 40px; }
+.arch-connector i { width: 32px; height: 32px; }
+
+.arch-layer { display: flex; flex-direction: column; gap: 1rem; }
+
+.rotate-90 { transform: rotate(90deg); }
+
+/* Tech Stack */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.stack-item {
+  background: var(--clr-card);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.stack-item:hover {
+  border-color: var(--clr-secondary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.stack-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--clr-secondary);
+  margin-bottom: 1rem;
+}
+
+.stack-item h4 { margin-bottom: 0.5rem; }
+.stack-item p { font-size: 0.875rem; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .architecture-diagram { flex-direction: column; }
+  .arch-connector { transform: rotate(90deg); margin: 1rem 0; }
+  .arch-layer { flex-direction: row; }
+  .split { display: none; }
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .pitch-hero h1 { font-size: 2.5rem; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .arch-layer { flex-direction: column; }
+  .stack-grid { grid-template-columns: 1fr; }
+}
